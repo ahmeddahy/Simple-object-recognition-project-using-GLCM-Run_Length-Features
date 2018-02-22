@@ -1,4 +1,4 @@
-function [result] = ContrastGLCM(matrix)%
+function [result] = ContrastGLCM(matrix)
 [h w]=size(matrix);
 sum=[0];
 for i =1:h
