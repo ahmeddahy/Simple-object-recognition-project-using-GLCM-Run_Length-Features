@@ -1,0 +1,19 @@
+function [Feature] = Run_Length( img )
+rl0=run_length_0(img);
+rl45=run_length_45(img);
+rl90=run_length_90(img);
+rl135=run_length_135(img);
+srlge=(SRLGE(rl0)+SRLGE(rl45)+SRLGE(rl90)+SRLGE(rl135))/4;
+srhge=(SRHGE(rl0)+SRHGE(rl45)+SRHGE(rl90)+SRHGE(rl135))/4;
+sre=(SRE(rl0)+SRE(rl45)+SRE(rl90)+SRE(rl135))/4;
+rlnu=(RLNU(rl0)+RLNU(rl45)+RLNU(rl90)+RLNU(rl135))/4;
+lrlge=(LRLGE(rl0)+LRLGE(rl45)+LRLGE(rl90)+LRLGE(rl135))/4;
+lrhge=(LRHGE(rl0)+LRHGE(rl45)+LRHGE(rl90)+LRHGE(rl135))/4;
+lre=(LRE(rl0)+LRE(rl45)+LRE(rl90)+LRE(rl135))/4;
+lgre=(LGRE(rl0)+LGRE(rl45)+LGRE(rl90)+LGRE(rl135))/4;
+hgre=(HGRE(rl0)+HGRE(rl45)+HGRE(rl90)+HGRE(rl135))/4;
+glnu=(GLNU(rl0)+GLNU(rl45)+GLNU(rl90)+GLNU(rl135))/4;
+[h w]=size(img);
+rp=(RP(rl0,h*w)+RP(rl45,h*w)+RP(rl90,h*w)+RP(rl135,h*w))/4;
+Feature=[srlge srhge sre rlnu lrlge lrhge lre lgre hgre glnu rp];
+end
